@@ -14,6 +14,12 @@ export interface InfoI {
   prev: number | null;
 }
 
+export interface eventI {
+  target: {
+    value: string
+  }
+}
+
 export const InfoDefault: InfoI = {
   count: "",
   next: "",
@@ -21,13 +27,13 @@ export const InfoDefault: InfoI = {
   prev: null
 }
 
-export const requestDataDefault: RequestDataI = {
+export const RequestDataDefault: RequestDataI = {
   info: InfoDefault,
   results: []
 }
 
 export const GlobalDataDefault: GlobalDataI = {
-  characters: requestDataDefault
+  characters: RequestDataDefault
 }
 
 export interface CharactersI {
@@ -39,4 +45,21 @@ export interface CharactersI {
   species: string;
   status: string;
   url: string;
+}
+
+export const eventDefault: eventI = {
+  target: {
+    value: ""
+  }
+}
+
+export const CharactersDefault: CharactersI = {
+  id: "",
+  created: "",
+  gender: "",
+  image: "",
+  name: "",
+  species: "",
+  status: "",
+  url: "",
 }

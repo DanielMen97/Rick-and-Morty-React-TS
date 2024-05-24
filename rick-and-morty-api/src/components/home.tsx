@@ -1,29 +1,25 @@
+import { useState } from "react"
 import useGlobal from "../hooks/useGlobal"
-
-interface eventI {
-  target: {
-    value: string
-  }
-}
+import { CharactersDefault, CharactersI, eventI } from '../models/global'
 
 const Home = () => {
 
-  const { characters } = useGlobal()  
+  const { characters } = useGlobal()
 
-  const copyCharacters = characters
-
-  const handleSearch = (e:eventI): void => {
-   console.log(e.target.value)
+  const [showCharacters, setShowCharacters] = useState<CharactersI[]>([{...CharactersDefault}]);
+  
+  const handleInputChange = (e:eventI): void => {
+    setShowCharacters(characters.results.filter(item => item.name.toLowerCase().includes(e.target.value.toLowerCase())))
   }
+  
   return (
     <div>
-      <input onChange={handleSearch}/> 
+      <input onChange={handleInputChange}/> 
       {
-        copyCharacters.results.map((item) => {
-          const colorNombre = item.name === "Rick Sanchez" ? "green" : ""
+        showCharacters.map((item) => {
           return(
             <div key={item.id}>
-            <p style={{color: colorNombre}}>{item.name}</p>
+            <p>{item.name}</p>
             <img src={item.image}/>
             </div>
           )

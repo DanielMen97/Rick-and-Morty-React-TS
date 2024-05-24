@@ -1,12 +1,12 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { GlobalDataDefault, GlobalDataI, requestDataDefault, RequestDataI } from "../models/global";
+import { GlobalDataDefault, GlobalDataI, RequestDataDefault, RequestDataI } from "../models/global";
 import { getAllCharacters } from "../services/globalServices";
 
 const GlobalContext = createContext<GlobalDataI>({...GlobalDataDefault});
 
 export function GlobalContextProvider({children}:{children: ReactNode}) {
 
-  const [ characters, setCharacters] = useState<RequestDataI>({...requestDataDefault})
+  const [ characters, setCharacters] = useState<RequestDataI>({...RequestDataDefault})
 
   useEffect(() => {
     getAllCharacters()
