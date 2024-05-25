@@ -1,0 +1,74 @@
+@import "../styles/global.module.scss";
+
+.home{
+  padding: 30px;
+  text-align: center;
+  background-color: #043c6e;
+  color: white;
+  font-family: $fontFamily;
+  .header{
+    
+    .title{
+      letter-spacing: 1.5px;
+      padding-bottom: 30px;
+    }
+
+    .filters{
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      padding-bottom: 30px;
+      
+      .input, .select{
+        font-size: 17px;
+        outline: none;
+        padding: 10px;
+        border-radius: 7px;
+        border: none;
+      }
+
+      i{
+        color: black;
+        position: relative;
+        left: -45px;
+        top: 13px;
+        font-size: 13.5px;
+        pointer-events: none;
+        color: #908d92;
+      }
+      
+      .select{
+        appearance: none;
+        cursor: pointer;
+        width: 110px;
+
+      }
+    }
+  }
+  .content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+
+    .characterCard{
+
+      .name{
+        display: flex;
+        height: 94px;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .image{
+        width: 250px;
+        border: 7px solid #60a85f;
+        border-radius: 5px;
+      }
+
+      .info{
+        text-transform: capitalize;
+      }
+    }
+  }
+}
