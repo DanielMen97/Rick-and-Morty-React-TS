@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Personajes de Rick and Morty</h1>
+        <h1 className={styles.title}>Characters Rick and Morty</h1>
         <nav className={styles.filters}>
           <input className={styles.input} onChange={handleInputChange} placeholder="Name..."/>
           <select className={styles.select} onChange={handleSelectChange}>
