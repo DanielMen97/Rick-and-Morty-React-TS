@@ -72,3 +72,29 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+
+  .home{ 
+    .content{  
+      .characterCard{
+        .name{
+          font-size: 17px;
+          height: 64px;
+        }
+        .image{
+          width: 165px;     
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+
+  .home{ 
+    .content{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
